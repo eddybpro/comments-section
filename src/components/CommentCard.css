@@ -1,0 +1,304 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap");
+
+:root {
+  --color-brand-1: hsl(212, 24%, 26%);
+  --color-brand-2: hsl(211, 10%, 45%);
+  --color-brand-3: hsl(358, 79%, 66%);
+  --color-brand-4: hsl(0, 0%, 100%);
+  --color-brand-5: hsl(239, 57%, 85%);
+  --color-brand-6: hsl(357, 100%, 86%);
+
+  --color-site-1: hsl(228, 33%, 97%);
+  --color-site-2: hsl(223, 19%, 93%);
+  --color-site-3: hsl(238, 40%, 52%);
+
+  --font-rubik: "Rubik", sans-serif;
+}
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: var(--font-rubik);
+}
+
+html {
+  font-size: 62.5%;
+}
+
+.Wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  flex-direction: column;
+  position: relative;
+  max-width: 110rem;
+}
+
+.Wrapper-CommentBox {
+  background-color: var(--color-brand-4);
+  padding: 2rem;
+  border-radius: 1rem;
+  position: relative;
+}
+
+.blur::after {
+  position: absolute;
+  content: "";
+  display: block;
+  top: -3rem;
+  left: -2rem;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--color-brand-1);
+  opacity: 0.5;
+}
+
+.Wrapper-CommentBox-UserBox {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.Wrapper-CommentBox-UserBox-UserImg {
+  display: block;
+  width: 4rem;
+}
+
+.Wrapper-CommentBox-UserBox-UserName {
+  font-size: 2rem;
+  color: var(--color-brand-1);
+}
+
+.Wrapper-CommentBox-UserBox-CreatedAt {
+  font-size: 1.6rem;
+  color: var(--color-brand-2);
+}
+
+.Wrapper-CommentBox-Comment {
+  font-size: 1.6rem;
+  color: var(--color-brand-2);
+  margin-bottom: 1.5rem;
+}
+
+.Wrapper-CommentBox-ReplyBtn {
+  display: block;
+  float: right;
+  border: none;
+  cursor: pointer;
+  font-size: 1.8rem;
+  text-transform: capitalize;
+  outline: none;
+  background-color: transparent;
+  font-weight: bold;
+  color: var(--color-site-3);
+  margin-top: 1rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.Wrapper-CommentBox-ReplyBtn:hover {
+  color: var(--color-brand-5);
+}
+
+.Wrapper-CommentBox-ReplyBtn > img {
+  width: 1.5rem;
+  margin-right: 0.25rem;
+}
+
+.Wrapper-CommentBox-ReplyBtn:hover > img {
+  filter: brightness(180%);
+}
+
+.Wrapper-CommentBox-DelEdiBtns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  float: right;
+  margin-top: 0.5rem;
+}
+
+.Wrapper-CommentBox-DelEdiBtns > button {
+  padding: 0.5rem;
+  font-size: 1.6rem;
+  text-transform: capitalize;
+  background-color: transparent;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.Wrapper-CommentBox-DelEdiBtns-DelBtn {
+  color: var(--color-brand-3);
+  transition: all 0.2s ease-in-out;
+}
+
+.Wrapper-CommentBox-DelEdiBtns-ediBtn {
+  color: var(--color-site-3);
+  transition: all 0.2s ease-in-out;
+}
+
+.Wrapper-CommentBox-DelEdiBtns-DelBtn:hover {
+  color: var(--color-brand-6);
+}
+
+.Wrapper-CommentBox-DelEdiBtns-ediBtn {
+  color: var(--color-site-5);
+}
+
+.Wrapper-CommentBox-DelEdiBtns > button > img {
+  width: 1.5rem;
+  margin-right: 0.25rem;
+}
+
+.Wrapper-CommentBox-DelEdiBtns > button:hover > img {
+  filter: brightness(180%);
+}
+
+.Wrapper-CommentBox-BtnsBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  background-color: var(--color-site-2);
+  width: fit-content;
+  padding: 1rem 1.5rem;
+  border-radius: 1rem;
+}
+
+.Wrapper-CommentBox-BtnsBox > button {
+  display: block;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: var(--color-site-3);
+  cursor: pointer;
+  padding: 0.25rem;
+}
+
+.Wrapper-CommentBox-BtnsBox-PlusBtn > img,
+.Wrapper-CommentBox-BtnsBox-MinusBtn > img {
+  width: 1.5rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.Wrapper-CommentBox-BtnsBox-PlusBtn:hover > img,
+.Wrapper-CommentBox-BtnsBox-MinusBtn:hover > img {
+  filter: brightness(50%);
+}
+
+.Wrapper-RepliesBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  padding-left: 1rem;
+  flex-direction: column;
+}
+
+.Wrapper-AddReply {
+  width: 97%;
+  background-color: var(--color-brand-4);
+  padding: 2rem;
+  border-radius: 1rem;
+  margin-top: -0.5rem;
+  margin-left: auto;
+}
+
+.Wrapper-DeleteWrapper {
+  position: absolute;
+  top: 20%;
+  background-color: var(--color-brand-4);
+  padding: 2rem;
+  border-radius: 1rem;
+  max-width: 40rem;
+}
+
+.Wrapper-DeleteWrapper-Title {
+  font-size: 2rem;
+  color: var(--color-brand-1);
+  margin-bottom: 1.5rem;
+}
+
+.Wrapper-DeleteWrapper-Para {
+  font-size: 1.6rem;
+  color: var(--color-brand-2);
+  margin-bottom: 1.5rem;
+}
+
+.Wrapper-DeleteWrapper-Btns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.Wrapper-DeleteWrapper-Btns > button {
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  color: var(--color-brand-4);
+}
+
+.Wrapper-DeleteWrapper-Btns-CancelBtn {
+  background-color: var(--color-brand-2);
+  transition: all 0.2s ease-in-out;
+}
+
+.Wrapper-DeleteWrapper-Btns-DelBtn {
+  background-color: var(--color-brand-3);
+  transition: all 0.2s ease-in-out;
+}
+
+.Wrapper-DeleteWrapper-Btns-CancelBtn:hover {
+  background-color: var(--color-brand-5);
+}
+
+.Wrapper-DeleteWrapper-Btns-DelBtn:hover {
+  background-color: var(--color-brand-6);
+}
+
+@media screen and (min-width: 768px) {
+  .Wrapper-CommentBox {
+    display: grid;
+    grid-template-columns: 10rem 1fr 10rem;
+    grid-template-rows: repeat(2, 1fr);
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .Wrapper-CommentBox-BtnsBox {
+    flex-direction: column;
+    grid-area: 1/1/3/2;
+  }
+
+  .Wrapper-CommentBox-UserBox {
+    grid-area: 1/2/1/2;
+  }
+  .Wrapper-CommentBox-ReplyBtn {
+    float: none;
+    margin-top: 0;
+    grid-area: 1/3/2/3;
+  }
+
+  .Wrapper-CommentBox-Comment {
+    grid-area: 2/2/2/4;
+  }
+
+  .Wrapper-RepliesBox {
+    padding-left: 2.5rem;
+  }
+}

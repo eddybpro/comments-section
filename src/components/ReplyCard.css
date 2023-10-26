@@ -1,0 +1,214 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap");
+
+:root {
+  --color-brand-1: hsl(212, 24%, 26%);
+  --color-brand-2: hsl(211, 10%, 45%);
+  --color-brand-3: hsl(358, 79%, 66%);
+  --color-brand-4: hsl(0, 0%, 100%);
+  --color-brand-5: hsl(239, 57%, 85%);
+  --color-brand-6: hsl(357, 100%, 86%);
+
+  --color-site-1: hsl(228, 33%, 97%);
+  --color-site-2: hsl(223, 19%, 93%);
+  --color-site-3: hsl(238, 40%, 52%);
+
+  --font-rubik: "Rubik", sans-serif;
+}
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: var(--font-rubik);
+}
+
+html {
+  font-size: 62.5%;
+}
+
+.RepliesBox {
+  background-color: var(--color-brand-4);
+  padding: 2rem;
+  border-radius: 1rem;
+}
+
+.RepliesBox-UserBox {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.RepliesBox-UserBox-UserImg {
+  display: block;
+  width: 4rem;
+}
+
+.RepliesBox-UserBox-UserName {
+  font-size: 2rem;
+  color: var(--color-brand-1);
+}
+
+.RepliesBox-UserBox-CurrentUser {
+  display: block;
+  border: none;
+  outline: none;
+  background-color: var(--color-site-3);
+  color: var(--color-brand-4);
+  padding: 0.25rem 0.5rem;
+  font-size: 1.6rem;
+  border-radius: 0.5rem;
+}
+
+.RepliesBox-UserBox-CreatedAt {
+  font-size: 1.6rem;
+  color: var(--color-brand-2);
+}
+
+.RepliesBox-Comment {
+  font-size: 1.6rem;
+  color: var(--color-brand-2);
+  margin-bottom: 1.5rem;
+}
+
+.RepliesBox-Comment-ReplyTo {
+  color: var(--color-site-3);
+  font-weight: bold;
+}
+
+.RepliesBox-ReplyBtn {
+  display: block;
+  float: right;
+  border: none;
+  cursor: pointer;
+  font-size: 1.8rem;
+  text-transform: capitalize;
+  outline: none;
+  background-color: transparent;
+  font-weight: bold;
+  color: var(--color-site-3);
+  margin-top: 1rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.RepliesBox-ReplyBtn:hover {
+  color: var(--color-brand-5);
+}
+
+.RepliesBox-DelEdiBtns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  float: right;
+  margin-top: 0.5rem;
+}
+
+.RepliesBox-DelEdiBtns > button {
+  padding: 0.5rem;
+  font-size: 1.6rem;
+  text-transform: capitalize;
+  background-color: transparent;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.RepliesBox-DelEdiBtns-DelBtn {
+  color: var(--color-brand-3);
+  transition: all 0.2s ease-in-out;
+}
+
+.RepliesBox-DelEdiBtns-DelBtn:hover {
+  color: var(--color-brand-6);
+}
+
+.RepliesBox-DelEdiBtns-EdiBtn {
+  color: var(--color-site-3);
+  transition: all 0.2s ease-in-out;
+}
+
+.RepliesBox-DelEdiBtns-EdiBtn:hover {
+  color: var(--color-brand-5);
+}
+
+.RepliesBox-DelEdiBtns > button > img {
+  width: 1.5rem;
+  margin-right: 0.25rem;
+}
+
+.RepliesBox-DelEdiBtns > button:hover > img {
+  filter: brightness(180%);
+}
+
+.RepliesBox-ReplyBtn > img {
+  width: 1.5rem;
+  margin-right: 0.25rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.RepliesBox-ReplyBtn:hover > img {
+  filter: brightness(180%);
+}
+
+.RepliesBox-BtnsBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  background-color: var(--color-site-2);
+  width: fit-content;
+  padding: 1rem 1.5rem;
+  border-radius: 1rem;
+}
+
+.RepliesBox-BtnsBox > button {
+  display: block;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: var(--color-site-3);
+  cursor: pointer;
+  padding: 0.25rem;
+}
+
+.RepliesBox-BtnsBox-PlusBtn > img,
+.RepliesBox-BtnsBox-MinusBtn > img {
+  width: 1.5rem;
+}
+
+@media screen and (min-width: 768px) {
+  .RepliesBox {
+    display: grid;
+    grid-template-columns: 10rem 1fr 20rem;
+    grid-template-rows: repeat(2, 1fr);
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .RepliesBox-BtnsBox {
+    flex-direction: column;
+    grid-area: 1/1/3/2;
+  }
+
+  .RepliesBox-ReplyBtn {
+    float: none;
+    margin-top: 0;
+    grid-area: 1/3/2/3;
+  }
+
+  .RepliesBox-UserBox {
+    grid-area: 1/2/1/2;
+  }
+
+  .RepliesBox-Comment {
+    grid-area: 2/2/2/4;
+  }
+}
